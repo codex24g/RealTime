@@ -35,7 +35,7 @@ def run():
     print("Inverted class names:", class_names_inv)
 
     # Start video capture
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(0)
 
     if not cap.isOpened():
         st.write("Failed to access camera. Please check the camera connection or deployment environment.")
