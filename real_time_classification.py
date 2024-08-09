@@ -36,6 +36,12 @@ def run():
 
     # Start video capture
     cap = cv2.VideoCapture(0)
+
+    if not cap.isOpened():
+        st.write("Failed to access camera. Please check the camera connection or deployment environment.")
+        # Optionally, provide fallback content or instructions here
+        return
+
     stframe = st.empty()
 
     while True:
@@ -68,3 +74,6 @@ def run():
 
     cap.release()
     cv2.destroyAllWindows()
+
+if __name__ == "__main__":
+    run()
